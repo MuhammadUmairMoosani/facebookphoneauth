@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:fullBackupContent="@xml/backup_config"
     package="com.socaillogin">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" /> 
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
       android:name=".MainApplication"
@@ -10,6 +15,10 @@
       android:icon="@mipmap/ic_launcher"
       android:allowBackup="false"
       android:theme="@style/AppTheme">
+         <activity
+      tools:replace="android:theme"
+      android:name="com.facebook.accountkit.ui.AccountKitActivity"
+      android:theme="@style/LoginThemeYellow" />
       <activity
         android:name=".MainActivity"
         android:label="@string/app_name"
@@ -21,6 +30,15 @@
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <meta-data
+        android:name="com.facebook.sdk.ApplicationId"
+        android:value="@string/fb_app_id" />
+    <meta-data
+        android:name="com.facebook.accountkit.ApplicationName"
+        android:value="@string/app_name" />
+    <meta-data
+        android:name="com.facebook.accountkit.ClientToken"
+        android:value="@string/ak_client_token" />
     </application>
 
 </manifest>

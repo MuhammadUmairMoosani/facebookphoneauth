@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">socaillogin</string>
+    <string name="fb_app_id">212379943006982</string>
+<string name="ak_client_token">fb212379943006982</string>
 </resources>
